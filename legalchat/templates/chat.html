@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>
+        Chat Room Application
+    </title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="//js.pusher.com/4.0/pusher.min.js"></script>
+
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="{% static 'js/custom.js' %}"></script>
+
+<body>
+    &nbsp;&nbsp;
+    <div class="row">
+        <div class="col-md-6 right">
+            <a href="/logout" class="button">logout</a>
+        </div>
+    </div>
+    <br>
+    &nbsp;&nbsp;&nbsp;
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-comment"></span> Chat Room
+                    </div>
+                    <div class="panel-body">
+                        <!-- ul element holding chat messages -->
+                        <ul class="chat" id="chat">
+                        </ul>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="input-group">
+                            <!-- text imput fot the messages to be typed into -->
+                            <input id="btn-input" class="form-control input-sm" placeholder="Type your message here..." type="text">
+                            <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="btn-chat" type="submit">
+                                Send</button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    &nbsp;&nbsp;
+    <div class="row">
+        <div class="col-md-12" style="text-align:center;">
+            {% for c in json_obj %}
+                <p> {{ c }} </p>
+            {% endfor %}       
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+web: gunicorn mikelegal_task.wsgi --log-file -
