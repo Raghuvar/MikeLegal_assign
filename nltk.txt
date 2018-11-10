@@ -2,4 +2,4 @@ wordnet
 pros_cons
 reuters
 punkt
-nltk_data
+averaged_perceptron_tagger
