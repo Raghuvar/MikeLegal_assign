@@ -30,7 +30,7 @@ $(document).ready(function() {
             var message = $('#btn-input').val();
 
             $.post({
-                url: 'ajax/chat/',
+                url: '/ajax/chat/',
                 data: {
                     'message': message
                 },
