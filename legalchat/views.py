@@ -40,6 +40,6 @@ def broadcast(request):
     temp = dict(nltk_tag)
     json_string = json.dumps(temp)
     pusher_client.trigger('a_channel', 'an_event', {'name': request.user.username, 'message': request.POST['message']})
-    #print(request.POST['message'])
-    #print("nltk_tag: ", temp)
+    print(request.POST['message'])
+    print("nltk_tag: ", temp)
     return HttpResponse("done")
