@@ -27,3 +27,5 @@ urlpatterns = [
     url(r'^$', views.chat),
     url(r'ajax/chat/$', views.broadcast),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
