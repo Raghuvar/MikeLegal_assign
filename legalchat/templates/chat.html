@@ -9,7 +9,40 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="//js.pusher.com/4.0/pusher.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $("#btn-input").on("keypress", function(e) {
+        if (e.which == 13 || e.which == 10) {
+            var message = $('#btn-input').val();
 
+            $.post({
+                url: 'ajax/chat/',
+                data: {
+                    'message': message
+                },
+                success: function(data) {
+                    $('#btn-input').val('');
+
+                }
+            });
+        }
+    })
+    $("#btn-chat").click(function() {
+        var message = $('#btn-input').val();
+
+        $.post({
+            url: 'ajax/chat/',
+            data: {
+                'message': message
+            },
+            success: function(data) {
+                $('#btn-input').val('');
+
+            }
+        });
+    })
+})
+</script>
 
 {% load static %}
 
