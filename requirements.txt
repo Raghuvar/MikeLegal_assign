@@ -4,3 +4,4 @@ nltk == 3.3
 pusher == 2.0.1
 gunicorn
 whitenoise
+python-decouple
